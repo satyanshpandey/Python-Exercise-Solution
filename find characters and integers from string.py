@@ -1,15 +1,19 @@
-import re
 sum=0
+strval=""
 val=0
+intval=""
 n = input("Enter string")
-
-a = re.findall(r"^\w\d+|\d+",n)   #is used for find all integer form the alphanumeric
-for i in n:
-        if(i.isalpha()):
-            sum=sum+1
-            print(i,end="")
-        elif(i.isnumeric()):
-            val=val+1
-
-print("",sum)
-print(f"{a} ",val)
+try:
+    for i in n:
+            if(i.isalpha()):
+                sum=sum+1
+                strval=strval+i
+            elif(i.isnumeric()):
+                val=val+1
+                intval=intval+i
+            else:
+                pass
+except:
+    pass
+print(f"{strval} have {sum} char")
+print(f"[{intval}]   {val} ")
